@@ -48,20 +48,20 @@ setup: clean install
 
 red: format
 	Rscript -e "devtools::test(stop_on_failure = TRUE)" \
-	&& git restore . \
+	&& git restore tests/testthat/ \
 	|| (git add tests/testthat/*.R && git commit -m "🛑🧪 Fail tests")
 	chmod g+w -R .
 
 green: format
 	Rscript -e "devtools::test(stop_on_failure = TRUE)" \
 	&& (git add R/*.R && git commit -m "✅ Pass tests") \
-	|| git restore .
+	|| git restore R
 	chmod g+w -R .
 
 refactor: format
 	Rscript -e "devtools::test(stop_on_failure = TRUE)" \
 	&& (git add R/*.R tests/testthat/*.R && git commit -m "♻️  Refactor") \
-	|| git restore .
+	|| git restore R tests/testthat/
 	chmod g+w -R .
 
 setup: clean install
@@ -69,8 +69,8 @@ setup: clean install
 install:
 	R -e "devtools::document()" && \
     R CMD build . && \
-    R CMD check templater_0.1.0.tar.gz && \
-    R CMD INSTALL templater_0.1.0.tar.gz
+    R CMD check rater_0.1.0.tar.gz && \
+    R CMD INSTALL rater_0.1.0.tar.gz
 
 tests:
 	Rscript -e "devtools::test(stop_on_failure = TRUE)"
