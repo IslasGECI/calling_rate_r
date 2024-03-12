@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - `sort_months_in_rows()`
+- `filter_by_site()`
+- `calculate_rate_vocalization()`
 
 ### Fixed
 
