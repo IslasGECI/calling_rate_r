@@ -7,4 +7,10 @@ describe("drop_months_with_na", {
     expected_ncols <- 1
     expect_equal(length(ncol(obtained)), expected_ncols)
   })
+  it("Drop month full of NAs", {
+    dataframe_with_na <- tibble::tibble("Ene" = NA, "Feb" = data_with_na, "Mar" = regular_data)
+    obtained <- drop_months_with_na(dataframe_with_na)
+    expected_ncols <- 1
+    expect_equal(length(ncol(obtained)), expected_ncols)
+  })
 })
