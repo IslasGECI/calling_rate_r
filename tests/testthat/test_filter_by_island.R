@@ -6,5 +6,6 @@ describe("Filter by island", {
     obtained_rows <- nrow(obtained)
     expected_rows <- 2
     testthat::expect_equal(obtained_rows, expected_rows)
+    testthat::expect_true(all(obtained$Isla == island))
   })
 })
