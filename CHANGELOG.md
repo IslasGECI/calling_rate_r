@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Add cli command `write_filtered_by_island`
+- Add cli command `write_dropped_off_recorder`
+- Public function `get_domain_specific_options()` 
 
 ## [0.1.0] - 2024-03-12
 
