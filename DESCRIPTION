@@ -10,15 +10,20 @@ Config/testthat/edition: 3
 Description: Herramientas para calcular las tasas de vocalización de PAIR
 Encoding: UTF-8
 Imports:
-    R6,
-    tidyverse
+    dplyr,
+    gecioptparse,
+    readr,
+    testtools,
 LazyData: true
 License: AGPL-3.0-or-later
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
 Suggests:
     devtools,
     roxygen2,
     testthat
+Remotes:
+    IslasGECI/gecioptparse,
+    IslasGECI/testtools,
 Type: Package
 Version: 0.1.0
+Config/roxygen2/version: 8.0.0
