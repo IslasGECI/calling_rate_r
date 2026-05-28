@@ -1,5 +1,6 @@
-FROM islasgeci/base:22.04
+FROM rocker/tidyverse
 COPY . /workdir
+WORKDIR /workdir
 
-RUN Rscript -e "remotes::install_github('IslasGECI/gecioptparse')"
-RUN Rscript -e "install.packages('comprehenr', repos='http://cran.rstudio.com')"
+RUN Rscript -e "install.packages(c('covr', 'DT', 'htmltools', 'styler'), repos='http://cran.rstudio.com')"
+
